@@ -6,10 +6,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import figglewatts.constantcandycruncher.entity.Player;
+
 public class TestScreen extends GameScreen {
-	Texture test;
-	TextureRegion testRegion;
-	SpriteBatch batch;
+	private Texture test;
+	private TextureRegion testRegion;
+	private SpriteBatch batch;
+	
+	public Player player;
 	
 	@Override
 	public void show() {
@@ -20,6 +24,10 @@ public class TestScreen extends GameScreen {
 		test = new Texture(Gdx.files.internal("data/test.png"));
 		testRegion = new TextureRegion(test);
 		testRegion.flip(false, true);
+		
+		player = new Player();
+		player.getSprite().setPosition(super.viewportWidth / 2, super.viewportHeight - 40);
+		System.out.println(player.getSprite().getX() + ", " + player.getSprite().getY());
 	}
 	
 	@Override
@@ -39,10 +47,12 @@ public class TestScreen extends GameScreen {
 		// apply superclass' camera to spritebatch
 		batch.setProjectionMatrix(camera.combined);
 		
-		batch.setBlendFunction(GL10.GL_NEAREST, GL10.GL_NEAREST);
+		player.update(delta);
 		
 		batch.begin();
-		batch.draw(testRegion, 0, 0);
+		//batch.draw(testRegion, 400, 300);
+		batch.draw(player.getSprite().getTexture(), player.getSprite().getX(), player.getSprite().getY());
+		player.draw(batch);
 		batch.end();
 	}
 }
