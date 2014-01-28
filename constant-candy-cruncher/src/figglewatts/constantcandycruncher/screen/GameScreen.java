@@ -1,4 +1,4 @@
-package figglewatts.constantcandycruncher;
+package figglewatts.constantcandycruncher.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
