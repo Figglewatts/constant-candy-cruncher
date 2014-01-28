@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import figglewatts.constantcandycruncher.entity.Player;
 
-public class TestScreen extends GameScreen {
+public class PlayGameScreen extends GameScreen {
 	private Texture test;
 	private TextureRegion testRegion;
 	private SpriteBatch batch;

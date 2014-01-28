@@ -11,11 +11,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Matrix4;
 
-import figglewatts.constantcandycruncher.screen.TestScreen;
+import figglewatts.constantcandycruncher.screen.PlayGameScreen;
 
 public class ConstantCandyCruncher implements ApplicationListener {
 	
-	TestScreen test = new TestScreen();
+	PlayGameScreen test = new PlayGameScreen();
 	
 	@Override
 	public void create() {		
