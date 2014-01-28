@@ -12,16 +12,20 @@ public class GameScreen implements Screen {
 		float w = Gdx.graphics.getWidth();
 		float h = Gdx.graphics.getHeight();
 		
+		System.out.println("W: " + w + ", H: " + h);
+		
 		float vw, vh; // viewport size in screen coords
 		float ox, oy; // viewport offset in screen coords
 		
 		// check aspect ratio
 		if (w > h * aspect) {
 			// black bars on sides
+			System.out.println(h * aspect);
 			vh = h;
 			vw = Math.round(vh * aspect);
 			oy = 0;
 			ox = (w - vw) / 2;
+			System.out.println("X: " + ox + ", Y: " + oy + ", W: " + vw + ", H: " + vh);
 		} else {
 			// black bars on top and bottom
 			vw = w;
@@ -53,13 +57,13 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		// set up viewport when window is resized
-		initViewport(400, 300, 4/3);
+		initViewport(400, 300, (4f/3f));
 	}
 
 	@Override
 	public void show() {
 		// set up viewport on first load
-		initViewport(400, 300, 4/3);
+		initViewport(400, 300, (4f/3f));
 	}
 
 	@Override
