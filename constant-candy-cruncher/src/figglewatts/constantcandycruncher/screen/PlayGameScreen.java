@@ -39,6 +39,11 @@ public class PlayGameScreen extends GameScreen {
 	}
 	
 	@Override
+	public void update(double delta) {
+		player.update(delta);
+	}
+	
+	@Override
 	public void render(float delta) {
 		// clear viewport for new frame
 		Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -46,8 +51,6 @@ public class PlayGameScreen extends GameScreen {
 		
 		// apply superclass' camera to spritebatch
 		batch.setProjectionMatrix(camera.combined);
-		
-		player.update(delta);
 		
 		batch.begin();
 		//batch.draw(testRegion, 400, 300);
