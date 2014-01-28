@@ -4,38 +4,38 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Pixmap.Format;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.FrameBuffer;
+import com.badlogic.gdx.math.Matrix4;
 
 public class ConstantCandyCruncher implements ApplicationListener {
-	private OrthographicCamera camera;
-	private SpriteBatch batch;
+	
+	TestScreen test = new TestScreen();
 	
 	@Override
 	public void create() {		
 		float w = Gdx.graphics.getWidth();
 		float h = Gdx.graphics.getHeight();
 		
-		camera = new OrthographicCamera(1, h/w);
-		batch = new SpriteBatch();
+		test.show();
 	}
 
 	@Override
 	public void dispose() {
-		batch.dispose();
+		test.dispose();
 	}
 
 	@Override
 	public void render() {		
-		Gdx.gl.glClearColor(1, 1, 1, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-		
-		batch.setProjectionMatrix(camera.combined);
-		batch.begin();
-		batch.end();
+		test.render(Gdx.graphics.getDeltaTime());
 	}
 
 	@Override
 	public void resize(int width, int height) {
+		test.resize(width, height);
 	}
 
 	@Override
