@@ -53,13 +53,13 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		// set up viewport when window is resized
-		initViewport(480, 360, 4/3);
+		initViewport(400, 300, 4/3);
 	}
 
 	@Override
 	public void show() {
 		// set up viewport on first load
-		initViewport(480, 360, 4/3);
+		initViewport(400, 300, 4/3);
 	}
 
 	@Override
