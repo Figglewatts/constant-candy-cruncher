@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Entity {
 	private Sprite sprite;
@@ -30,6 +31,13 @@ public class Entity {
 	
 	private void generateID() {
 		this.id = UUID.randomUUID().getMostSignificantBits();
+	}
+	
+	public void update(double delta) {
+	}
+	
+	public void draw(SpriteBatch batch) {
+		this.sprite.draw(batch);
 	}
 	
 	public Entity(Texture texture, String name) {
