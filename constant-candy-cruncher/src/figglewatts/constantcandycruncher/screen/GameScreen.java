@@ -52,6 +52,10 @@ public class GameScreen implements Screen {
 		// set viewport to restrict drawing
 		Gdx.gl20.glViewport((int)ox, (int)oy, (int)vw, (int)vh);
 	}
+	
+	public void update(double delta) {
+		
+	}
 
 	@Override
 	public void render(float delta) {
