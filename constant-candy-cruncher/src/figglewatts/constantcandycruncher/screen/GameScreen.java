@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class GameScreen implements Screen {
 	public OrthographicCamera camera;
 	
+	public int viewportWidth = 400;
+	public int viewportHeight = 300;
+	
 	public void initViewport(float width, float height, float aspect) {
 		// get window size in pixels
 		float w = Gdx.graphics.getWidth();
@@ -57,13 +60,13 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		// set up viewport when window is resized
-		initViewport(400, 300, (4f/3f));
+		initViewport(viewportWidth, viewportHeight, (4f/3f));
 	}
 
 	@Override
 	public void show() {
 		// set up viewport on first load
-		initViewport(400, 300, (4f/3f));
+		initViewport(viewportWidth, viewportHeight, (4f/3f));
 	}
 
 	@Override
