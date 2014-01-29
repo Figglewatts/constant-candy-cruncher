@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Entity {
+public abstract class Entity {
 	private Sprite sprite;
 	private String name;
 	private long id;
@@ -42,6 +42,7 @@ public class Entity {
 	
 	public Entity(Texture texture, String name) {
 		this.sprite = new Sprite(texture);
+		this.sprite.flip(false, true);
 		this.name = name;
 		this.generateID();
 	}
