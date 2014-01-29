@@ -6,14 +6,16 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import figglewatts.constantcandycruncher.animation.AnimatedSprite;
+
 public abstract class Entity {
-	private Sprite sprite;
+	private AnimatedSprite sprite;
 	private String name;
 	private long id;
 	public Sprite getSprite() {
 		return sprite;
 	}
-	public void setSprite(Sprite sprite) {
+	public void setSprite(AnimatedSprite sprite) {
 		this.sprite = sprite;
 	}
 	public String getName() {
@@ -41,7 +43,7 @@ public abstract class Entity {
 	}
 	
 	public Entity(Texture texture, String name) {
-		this.sprite = new Sprite(texture);
+		this.sprite = new AnimatedSprite(texture);
 		this.sprite.flip(false, true);
 		this.name = name;
 		this.generateID();
