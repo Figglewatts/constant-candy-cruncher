@@ -23,7 +23,7 @@ public class ConstantCandyCruncher implements ApplicationListener {
 	private long currentTime = System.nanoTime();
 	private double delta = 0.0f;
 	
-	private PlayGameScreen playGameScreen = new PlayGameScreen();
+	public static PlayGameScreen playGameScreen = new PlayGameScreen();
 	
 	@Override
 	public void create() {		
