@@ -7,8 +7,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class GameScreen implements Screen {
 	public OrthographicCamera camera;
 	
-	public int viewportWidth = 400;
-	public int viewportHeight = 300;
+	public static int viewportWidth = 400;
+	public static int viewportHeight = 300;
 	
 	public void initViewport(float width, float height, float aspect) {
 		// get window size in pixels
